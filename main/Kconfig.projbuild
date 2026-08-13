@@ -1,0 +1,27 @@
+menu "Paulo Voice PE"
+
+config APP_WIFI_SSID
+    string "Wi-Fi SSID"
+    default "Antena  1  94.7  FM"
+
+config APP_WIFI_PASSWORD
+    string "Wi-Fi password"
+    default "nat13server13"
+
+config APP_SERVER_BASE_URL
+    string "Servidor local"
+    default "http://192.168.2.160:8091"
+
+config APP_DEVICE_ID
+    string "Device ID"
+    default "voice-pe-paulo"
+
+config APP_DEVICE_NAME
+    string "Device name"
+    default "Assistente de Voz do Paulo"
+
+config APP_ENABLE_OUTBOUND_REGISTER
+    bool "Registrar no servidor por POST direto"
+    default n
+
+endmenu
