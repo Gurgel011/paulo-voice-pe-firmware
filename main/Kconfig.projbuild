@@ -2,15 +2,15 @@ menu "Paulo Voice PE"
 
 config APP_WIFI_SSID
     string "Wi-Fi SSID"
-    default "Antena  1  94.7  FM"
+    default ""
 
 config APP_WIFI_PASSWORD
     string "Wi-Fi password"
-    default "nat13server13"
+    default ""
 
 config APP_SERVER_BASE_URL
     string "Servidor local"
-    default "http://192.168.2.160:8091"
+    default "http://192.0.2.10:8091"
 
 config APP_DEVICE_ID
     string "Device ID"

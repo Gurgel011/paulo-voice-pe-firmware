@@ -27,37 +27,52 @@ Firmware proprio para o ESP32-S3 Home Assistant Voice PE do Paulo.
 
 ## Estado atual
 
-- Conecta no Wi-Fi `Antena  1  94.7  FM`.
+- Conecta no Wi-Fi configurado (ver Configuração abaixo).
 - Sobe API HTTP no proprio ESP.
-- Testado em `192.168.2.108`.
 - Endpoints:
   - `GET /health`
   - `GET /state`
   - `GET /events`
   - `POST /command`
-- O sentido ESP -> servidor `192.168.2.160:8091` apresentou timeout TCP nesta rede, entao o controle padrao agora e computador -> ESP.
+- O sentido ESP -> servidor apresentou timeout TCP na rede de teste original,
+  entao o controle padrao agora e computador -> ESP.
+
+## Configuração
+
+Wi-Fi, endereço do servidor local e identidade do dispositivo ficam em opções
+de Kconfig, sem valor padrão real (o `sdkconfig.defaults` versionado não tem
+nenhum segredo):
+
+```bash
+idf.py menuconfig
+```
+
+Vá em `Paulo Voice PE` e preencha `Wi-Fi SSID`, `Wi-Fi password` e
+`Servidor local`. Isso grava num `sdkconfig` local, **não versionado**.
 
 ## Build e flash
 
 ```bash
-cd /home/paulo/esp32-projects/paulo-voice-pe-firmware
-source /home/paulo/esp/esp-idf-v5.5.2/export.sh
+cd <diretorio-do-projeto>
+source <caminho-do-esp-idf>/export.sh
 idf.py build
-idf.py -p /dev/ttyACM0 flash
+idf.py -p <porta-serial> flash
 ```
 
 ## Backup original
 
-Backup de fabrica preservado:
+Antes de gravar este firmware por cima do original, extraia um backup:
 
-```text
-/home/paulo/esp32s3-voice-pe/original-flash-2026-07-01.bin
+```bash
+esptool.py --chip esp32s3 -p <porta-serial> read_flash 0x0 0x1000000 \
+  <diretorio-de-backups>/voice-pe-original-$(date +%Y%m%d).bin
 ```
 
-Script de restore:
+Restaurar:
 
-```text
-/home/paulo/esp32s3-voice-pe/restore-original.sh
+```bash
+esptool.py --chip esp32s3 -p <porta-serial> write_flash 0x0 \
+  <diretorio-de-backups>/voice-pe-original-<data>.bin
 ```
 
 ## Proxima fase

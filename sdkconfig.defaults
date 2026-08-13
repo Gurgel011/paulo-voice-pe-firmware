@@ -12,9 +12,10 @@ CONFIG_LOG_DEFAULT_LEVEL_INFO=y
 CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG=y
 # CONFIG_ESP_CONSOLE_UART_DEFAULT is not set
 # CONFIG_ESP_CONSOLE_SECONDARY_USB_SERIAL_JTAG is not set
-CONFIG_APP_WIFI_SSID="Antena  1  94.7  FM"
-CONFIG_APP_WIFI_PASSWORD="nat13server13"
-CONFIG_APP_SERVER_BASE_URL="http://192.168.2.160:8091"
+# Wi-Fi e endereço do servidor: configure com `idf.py menuconfig` (gera um
+# `sdkconfig` local, não versionado) em vez de editar aqui. Ver README.md.
+# CONFIG_APP_WIFI_SSID e CONFIG_APP_WIFI_PASSWORD ficam vazios por padrão.
+CONFIG_APP_SERVER_BASE_URL="http://192.0.2.10:8091"
 CONFIG_APP_DEVICE_ID="voice-pe-paulo"
 CONFIG_APP_DEVICE_NAME="Assistente de Voz do Paulo"
 # CONFIG_APP_ENABLE_OUTBOUND_REGISTER is not set

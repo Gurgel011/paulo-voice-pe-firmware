@@ -996,7 +996,6 @@ void app_main(void)
     ESP_ERROR_CHECK(ret);
 
     ESP_LOGI(TAG, "Firmware proprio Paulo Voice PE iniciando");
-    ESP_LOGI(TAG, "Backup original preservado em /home/paulo/esp32s3-voice-pe/original-flash-2026-07-01.bin");
     remember_event("boot", 1);
 
     init_gpio();
