@@ -1,4 +1,8 @@
-# Paulo Voice PE Firmware
+# Voice PE · Firmware em português
+
+`ESP32-S3` · `ESP-IDF` · `C` · `HTTP` · `Protótipo`
+
+[Estado atual](#estado-atual) · [Configuração](#configuração) · [Próximas etapas](#proxima-fase) · [← Todos os projetos](https://github.com/Gurgel011#projetos)
 
 Firmware proprio para o ESP32-S3 Home Assistant Voice PE do Paulo.
 
